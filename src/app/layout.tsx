@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
-import dynamic from 'next/dynamic';
+import ClientShell from '@/components/client/ClientShell';
 import './globals.css';
 
 const inter = Inter({
@@ -16,16 +16,6 @@ const montserrat = Montserrat({
   display: 'swap',
   weight: ['600', '700', '800'],
 });
-
-const CookieConsent = dynamic(
-  () => import('@/components/client/CookieConsent'),
-  { ssr: false, loading: () => null },
-);
-
-const CtaPanel = dynamic(
-  () => import('@/components/client/CtaPanel'),
-  { ssr: false, loading: () => <div className='h-16' /> },
-);
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'),
@@ -46,8 +36,7 @@ export default function RootLayout({
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className='min-h-screen flex flex-col antialiased'>
         {children}
-        <CookieConsent />
-        <CtaPanel />
+        <ClientShell />
       </body>
     </html>
   );

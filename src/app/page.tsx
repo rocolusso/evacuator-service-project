@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
 import { getTranslations } from '@/lib/i18n';
 import Header from '@/components/layout/Header';
 import JsonLd from '@/components/layout/JsonLd';
@@ -10,32 +8,12 @@ import PricingSection from '@/components/sections/PricingSection';
 import FaqSection from '@/components/sections/FaqSection';
 import SeoSection from '@/components/sections/SeoSection';
 import Footer from '@/components/sections/Footer';
+import DeferredContactForm from '@/components/client/DeferredContactForm';
 
 export const revalidate = 86400;
 
 const locale = 'ro' as const;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
-
-const ContactForm = dynamic(
-  () => import('@/components/client/ContactForm'),
-  {
-    ssr: false,
-    loading: () => (
-      <div
-        className='py-16 md:py-24 flex items-center justify-center'
-        style={{ background: 'var(--surface)', minHeight: '400px' }}
-        aria-busy='true'
-      >
-        <div
-          className='w-10 h-10 rounded-full border-4 border-t-transparent animate-spin'
-          style={{ borderColor: 'var(--border)', borderTopColor: 'var(--accent)' }}
-          role='status'
-          aria-label='Loading form...'
-        />
-      </div>
-    ),
-  },
-);
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = getTranslations(locale);
@@ -83,9 +61,7 @@ export default function HomePage() {
         <AdvantagesSection t={t} />
         <PricingSection t={t} />
         <FaqSection t={t} />
-        <Suspense>
-          <ContactForm t={t} />
-        </Suspense>
+        <DeferredContactForm t={t} />
         <SeoSection t={t} />
       </main>
       <Footer t={t} />
