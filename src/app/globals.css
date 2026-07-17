@@ -1,1 +1,125 @@
 @import "tailwindcss";
+
+/* ─── CSS Custom Properties (Light theme default) ─── */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --surface: #f1f5f9;
+  --surface-hover: #e2e8f0;
+  --border: #e2e8f0;
+  --accent: #facc15;
+  --accent-hover: #eab308;
+  --accent-foreground: #0f172a;
+  --accent-green: #22c55e;
+  --accent-green-hover: #16a34a;
+  --muted: #64748b;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --hero-bg: #0f172a;
+  --hero-overlay: rgba(15, 23, 42, 0.88);
+}
+
+/* ─── Dark theme ─── */
+[data-theme='dark'] {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --border: #334155;
+  --accent: #facc15;
+  --accent-hover: #eab308;
+  --accent-foreground: #0f172a;
+  --accent-green: #22c55e;
+  --accent-green-hover: #16a34a;
+  --muted: #94a3b8;
+  --card: #1e293b;
+  --card-border: #334155;
+  --hero-bg: #020617;
+  --hero-overlay: rgba(2, 6, 23, 0.92);
+}
+
+/* ─── Base styles ─── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  /* Reserve space for fixed CTA panel at bottom */
+  padding-bottom: 72px;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* ─── Keyframe: Wave (left CTA) ─── */
+@keyframes wave {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(250, 204, 21, 0);
+  }
+}
+
+/* ─── Keyframe: Pulse (right CTA / phone) ─── */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* ─── CTA utility classes ─── */
+.cta-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.cta-pulse {
+  animation: pulse-ring 1.5s ease-in-out infinite;
+}
+
+/* ─── Smooth theme transition ─── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+/* ─── Scrollbar styling ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

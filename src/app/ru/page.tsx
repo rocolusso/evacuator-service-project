@@ -13,7 +13,7 @@ import Footer from '@/components/sections/Footer';
 
 export const revalidate = 86400;
 
-const locale = 'ro' as const;
+const locale = 'ru' as const;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
 
 const ContactForm = dynamic(
@@ -30,7 +30,7 @@ const ContactForm = dynamic(
           className='w-10 h-10 rounded-full border-4 border-t-transparent animate-spin'
           style={{ borderColor: 'var(--border)', borderTopColor: 'var(--accent)' }}
           role='status'
-          aria-label='Loading form...'
+          aria-label='Загрузка формы...'
         />
       </div>
     ),
@@ -46,9 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: t.meta.ogTitle,
       description: t.meta.ogDescription,
-      url: baseUrl,
-      siteName: 'Evacuator Chisinau',
-      locale: 'ro_MD',
+      url: `${baseUrl}/ru`,
+      siteName: 'Эвакуатор Кишинев',
+      locale: 'ru_MD',
       type: 'website',
     },
     twitter: {
@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t.meta.ogDescription,
     },
     alternates: {
-      canonical: `${baseUrl}/`,
+      canonical: `${baseUrl}/ru`,
       languages: {
         'ro': `${baseUrl}/`,
         'ru': `${baseUrl}/ru`,
@@ -67,7 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function HomePage() {
+export default function RuPage() {
   const t = getTranslations(locale);
 
   return (
@@ -75,7 +75,7 @@ export default function HomePage() {
       <JsonLd
         locale={locale}
         t={t}
-        baseUrl={baseUrl}
+        baseUrl={`${baseUrl}/ru`}
       />
       <Header t={t} />
       <main>
