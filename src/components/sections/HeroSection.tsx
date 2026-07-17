@@ -1,4 +1,5 @@
 import type { Locale } from '@/types';
+import Link from "next/link";
 
 interface HeroSectionProps {
   t: Locale;
@@ -40,6 +41,9 @@ export default function HeroSection({ t }: HeroSectionProps) {
 
       <div className='relative z-10 container mx-auto px-4 py-20 md:py-28 lg:py-32 text-center'>
         {/* Badge */}
+        <div className={'mb-10'}>
+          <Link href={'/'} className={'font-bold text-5xl text-white'}>VEZU.MD</Link>
+        </div>
         <div className='inline-flex items-center gap-2 mb-6'>
           <span
             className='w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse'
@@ -86,7 +90,7 @@ export default function HeroSection({ t }: HeroSectionProps) {
         <div className='mt-12 flex flex-wrap justify-center gap-6 text-slate-400 text-sm'>
           <span className='flex items-center gap-2'>
             <span aria-hidden='true'>⚡</span>
-            30–45 min
+            15–20+ min
           </span>
           <span className='flex items-center gap-2'>
             <span aria-hidden='true'>🛡️</span>
