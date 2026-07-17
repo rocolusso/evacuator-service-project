@@ -1,18 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useCookieStore } from '@/store/cookieStore';
 import { getTranslations } from '@/lib/i18n';
-import type { LocaleCode } from '@/types';
 
 export default function CookieConsent() {
   const { accepted, accept } = useCookieStore();
-  const [locale, setLocale] = useState<LocaleCode>('ro');
-
-  useEffect(() => {
-    const isRu = window.location.pathname.startsWith('/ru');
-    setLocale(isRu ? 'ru' : 'ro');
-  }, []);
+  const pathname = usePathname();
+  const locale = pathname?.startsWith('/ru') ? 'ru' : 'ro';
 
   if (accepted) return null;
 

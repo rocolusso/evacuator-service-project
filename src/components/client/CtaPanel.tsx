@@ -1,17 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import type { LocaleCode } from '@/types';
+import { usePathname } from 'next/navigation';
 import { getTranslations } from '@/lib/i18n';
 
 export default function CtaPanel() {
-  const [locale, setLocale] = useState<LocaleCode>('ro');
-
-  useEffect(() => {
-    const isRu = window.location.pathname.startsWith('/ru');
-    setLocale(isRu ? 'ru' : 'ro');
-  }, []);
-
+  const pathname = usePathname();
+  const locale = pathname?.startsWith('/ru') ? 'ru' : 'ro';
   const t = getTranslations(locale);
   const phone = t.nav.phone;
   const phoneHref = `tel:${phone.replace(/\s/g, '')}`;
