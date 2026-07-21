@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { flattenError } from 'zod';
 import { formSchema } from '@/lib/schemas';
 import { sendToTelegram, formatMessage } from '@/lib/telegram';
 
@@ -17,7 +18,7 @@ export async function POST(req: NextRequest) {
   const parsed = formSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json(
-      { error: 'Validation failed', details: parsed.error.flatten().fieldErrors },
+      { error: 'Validation failed', details: flattenError(parsed.error).fieldErrors },
       { status: 400 },
     );
   }

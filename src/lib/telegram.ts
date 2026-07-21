@@ -25,6 +25,8 @@ export async function sendToTelegram(
     );
 
     if (!res.ok) {
+      const body = await res.text();
+      console.error('[telegram] API error body:', body);
       throw new Error(`Telegram API error: ${res.status}`);
     }
   } finally {
@@ -36,8 +38,10 @@ export function formatMessage(name: string, phone: string, message: string): str
   return [
     '🚛 <b>Новая заявка с сайта Evacuator</b>',
     '',
-    `👤 <b>Имя:</b> ${name} <br/>`,
-    `📞 <b>Телефон:</b> ${phone}<br/>`,
+    `👤 <b>Имя:</b> ${name}`,
+    '',
+    `📞 <b>Телефон:</b> ${phone}`,
+    '',
     `📝 <b>Сообщение:</b> ${message}`,
   ].join('\n');
 }
