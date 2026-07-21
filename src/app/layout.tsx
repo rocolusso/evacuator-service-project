@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 import ClientShell from '@/components/client/ClientShell';
 import './globals.css';
 
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className='min-h-screen flex flex-col antialiased'>
         {children}
         <ClientShell />
+        <Analytics />
       </body>
     </html>
   );
