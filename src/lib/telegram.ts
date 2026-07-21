@@ -36,8 +36,8 @@ export function formatMessage(name: string, phone: string, message: string): str
   return [
     '🚛 <b>Новая заявка с сайта Evacuator</b>',
     '',
-    `👤 <b>Имя:</b> ${name}`,
-    `📞 <b>Телефон:</b> ${phone}`,
+    `👤 <b>Имя:</b> ${name} <br/>`,
+    `📞 <b>Телефон:</b> ${phone}<br/>`,
     `📝 <b>Сообщение:</b> ${message}`,
   ].join('\n');
 }
