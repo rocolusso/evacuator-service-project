@@ -45,7 +45,7 @@ const ro: Locale = {
       {
         title: 'Sedan, Hatchback până la 2t',
         price: 'de la 450 MDL',
-        per: '+ 11 MDL/km',
+        per: '+ 9 MDL/km',
         icon: '🚗',
       },
       {
@@ -120,7 +120,7 @@ const ro: Locale = {
   },
   footer: {
     rights: '© 2026 Evacuator Chișinău. Toate drepturile rezervate.',
-    phone: '+373 60 000 000',
+    phone: '+37362127783',
     workingHours: 'Fără zile de odihnă 24/7',
   },
   cookie: {
@@ -130,17 +130,17 @@ const ro: Locale = {
   nav: {
     langLabel: 'RU',
     langHref: '/ru',
-    phone: '+373 60 000 000',
+    phone: '+37362127783',
   },
   form: {
     title: 'Cheamă evacuatorul',
     namePlaceholder: 'Numele tău',
-    phonePlaceholder: '+373 60 000 000',
+    phonePlaceholder: '+37362127783',
     messagePlaceholder: 'Descrie situația (adresa, marca mașinii...)',
     submit: 'Trimite cererea',
     sending: 'Se trimite...',
     success: 'Cererea a fost trimisă! Vă vom apela în scurt timp.',
-    error: 'Eroare la trimitere. Sunați direct: +373 60 000 000',
+    error: 'Eroare la trimitere. Sunați direct: +37362127783',
     nameError: 'Introduceți numele (minim 2 caractere)',
     phoneError: 'Introduceți un număr de telefon valid',
     messageError: 'Descrieți situația (minim 5 caractere)',
