@@ -120,7 +120,7 @@ const ro: Locale = {
   },
   footer: {
     rights: '© 2026 Evacuator Chișinău. Toate drepturile rezervate.',
-    phone: '+37362127783',
+    phone: '+37368988220',
     workingHours: 'Fără zile de odihnă 24/7',
   },
   cookie: {
@@ -130,17 +130,17 @@ const ro: Locale = {
   nav: {
     langLabel: 'RU',
     langHref: '/ru',
-    phone: '+37362127783',
+    phone: '+37368988220',
   },
   form: {
     title: 'Cheamă evacuatorul',
     namePlaceholder: 'Numele tău',
-    phonePlaceholder: '+37362127783',
+    phonePlaceholder: '+37368988220',
     messagePlaceholder: 'Descrie situația (adresa, marca mașinii...)',
     submit: 'Trimite cererea',
     sending: 'Se trimite...',
     success: 'Cererea a fost trimisă! Vă vom apela în scurt timp.',
-    error: 'Eroare la trimitere. Sunați direct: +37362127783',
+    error: 'Eroare la trimitere. Sunați direct: +37368988220',
     nameError: 'Introduceți numele (minim 2 caractere)',
     phoneError: 'Introduceți un număr de telefon valid',
     messageError: 'Descrieți situația (minim 5 caractere)',

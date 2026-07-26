@@ -13,7 +13,7 @@ function buildLocalBusinessSchema(t: Locale, baseUrl: string) {
     name: 'Evacuator Chisinau / Эвакуатор Кишинев',
     '@id': baseUrl,
     url: baseUrl,
-    telephone: '+37360000000',
+    telephone: '+37368988220',
     priceRange: '400 MDL - 1500 MDL',
     description: t.meta.description,
     image: `${baseUrl}/og-image.jpg`,
