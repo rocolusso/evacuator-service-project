@@ -2,10 +2,10 @@
 
 import dynamic from 'next/dynamic';
 
-const CookieConsent = dynamic(
-  () => import('./CookieConsent'),
-  { ssr: false, loading: () => null },
-);
+// const CookieConsent = dynamic(
+//   () => import('./CookieConsent'),
+//   { ssr: false, loading: () => null },
+// );
 
 const CtaPanel = dynamic(
   () => import('./CtaPanel'),
@@ -15,7 +15,7 @@ const CtaPanel = dynamic(
 export default function ClientShell() {
   return (
     <>
-      <CookieConsent />
+      {/*<CookieConsent />*/}
       <CtaPanel />
     </>
   );
