@@ -1,4 +1,5 @@
 import type { Locale } from '@/types';
+import PhoneLink from '@/components/client/PhoneLink';
 
 interface FooterProps {
   t: Locale;
@@ -35,13 +36,13 @@ export default function Footer({ t }: FooterProps) {
               {footer.workingHours}
             </span>
 
-            <a
+            <PhoneLink
               href={`tel:${nav.phone.replace(/\s/g, '')}`}
               className='text-sm font-bold text-yellow-400 hover:text-yellow-300 transition-colors'
-              aria-label={`Call us: ${footer.phone}`}
+              ariaLabel={`Call us: ${footer.phone}`}
             >
               {footer.phone}
-            </a>
+            </PhoneLink>
           </div>
         </div>
       </div>

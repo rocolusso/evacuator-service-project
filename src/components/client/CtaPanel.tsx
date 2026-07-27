@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { getTranslations } from '@/lib/i18n';
+import { pushPhoneClickEvent } from '@/lib/analytics';
 
 export default function CtaPanel() {
   const pathname = usePathname();
@@ -42,6 +43,7 @@ export default function CtaPanel() {
         className='cta-pulse flex-1 flex items-center justify-center gap-2 font-bold text-sm md:text-base text-white transition-all active:scale-95'
         style={{ background: 'var(--accent-green)' }}
         aria-label={`Call ${phone}`}
+        onClick={pushPhoneClickEvent}
       >
         <svg
           width='18'

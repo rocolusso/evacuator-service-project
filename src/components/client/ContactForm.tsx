@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { formSchema } from '@/lib/schemas';
+import { formSendedEvent } from '@/lib/analytics';
 import type { Locale } from '@/types';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
@@ -61,6 +62,7 @@ export default function ContactForm({ t }: ContactFormProps) {
       });
 
       if (res.ok) {
+        formSendedEvent();
         setState('success');
         setValues({ name: '', phone: '', message: '' });
       } else {
