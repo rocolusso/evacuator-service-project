@@ -120,9 +120,9 @@ const ru: Locale = {
   },
   footer: {
     rights: '© 2026 Vezu.md. Все права защищены.\n' +
-        'Услуги предоставляет: Oleksandr Shchedrov',
+        'Услуги предоставляет: Oleksandr Shchedrov. Address: Stefan cel Mare 115/1, Chișinău',
     phone: '+37368988220',
-    workingHours: 'Без выходных 24/7 | Stefan cel Mare 115/1, Chișinău',
+    workingHours: 'Без выходных 24/7',
   },
   cookie: {
     message: 'Мы используем cookie для улучшения работы сайта. Продолжая, вы соглашаетесь с их использованием.',
