@@ -22,10 +22,11 @@ export default function Header({ t }: HeaderProps) {
         <div className='flex items-center justify-between h-14 md:h-16'>
           {/* Logo */}
           <a
-            href='#'
+            href='/'
             className='flex items-center gap-2 font-extrabold text-base md:text-lg text-white hover:text-yellow-400 transition-colors'
             aria-label='Evacuator Chisinau — Home'
           >
+            <span>VEZU.MD</span>
             <span aria-hidden='true'>🚛</span>
             <span>
               Evacuator

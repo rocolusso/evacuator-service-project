@@ -1,5 +1,6 @@
 import type { Locale } from '@/types';
 import PhoneLink from '@/components/client/PhoneLink';
+import Link from "next/link";
 
 interface FooterProps {
   t: Locale;
@@ -18,12 +19,13 @@ export default function Footer({ t }: FooterProps) {
     >
       <div className='container mx-auto px-4'>
         <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
-          <p
+          <Link
             className='text-sm'
             style={{ color: 'var(--muted)' }}
+            href={'/'}
           >
             {footer.rights}
-          </p>
+          </Link>
 
           <div className='flex items-center gap-4'>
             <span

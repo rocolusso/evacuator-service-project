@@ -119,7 +119,7 @@ const ro: Locale = {
         'Serviciul de autoevacuare activează non-stop. Datorită distribuției corecte a autospecialelor pe sectoarele capitalei (Botanica, Centru, Rîșcani, Buiucani, Ciocana), timpul de așteptare se reduce la minimum. Un singur apel vă rezolvă problema chiar acum.',
   },
   footer: {
-    rights: '© 2026 Evacuator Chișinău. Toate drepturile rezervate.',
+    rights: 'VEZU.MD © 2026 Evacuator Chișinău. Toate drepturile rezervate.',
     phone: '+37368988220',
     workingHours: 'Fără zile de odihnă 24/7',
   },
