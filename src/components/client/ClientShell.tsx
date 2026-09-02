@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import TurnstileGate from './TurnstileGate';
 
 // const CookieConsent = dynamic(
 //   () => import('./CookieConsent'),
@@ -15,6 +16,7 @@ const CtaPanel = dynamic(
 export default function ClientShell() {
   return (
     <>
+      <TurnstileGate />
       {/*<CookieConsent />*/}
       <CtaPanel />
     </>

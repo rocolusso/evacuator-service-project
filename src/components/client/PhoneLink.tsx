@@ -1,6 +1,6 @@
 'use client';
 
-import { pushPhoneClickEvent } from '@/lib/analytics';
+import { handlePhoneClick } from '@/lib/analytics';
 
 interface PhoneLinkProps {
   href: string;
@@ -15,7 +15,7 @@ export default function PhoneLink({ href, className, ariaLabel, children }: Phon
       href={href}
       className={className}
       aria-label={ariaLabel}
-      onClick={pushPhoneClickEvent}
+      onClick={handlePhoneClick}
     >
       {children}
     </a>
