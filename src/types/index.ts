@@ -18,6 +18,11 @@ export interface ServiceItem {
   icon: string;
 }
 
+export interface PolicySection {
+  heading: string;
+  body: string;
+}
+
 export interface Locale {
   meta: {
     title: string;
@@ -63,10 +68,27 @@ export interface Locale {
     rights: string;
     phone: string;
     workingHours: string;
+    cookieSettingsLabel: string;
+    privacyPolicyLabel: string;
+    cookiePolicyLabel: string;
   };
   cookie: {
     message: string;
     accept: string;
+    reject: string;
+    policyLinkText: string;
+  };
+  privacyPolicy: {
+    title: string;
+    updated: string;
+    intro: string;
+    sections: PolicySection[];
+  };
+  cookiePolicy: {
+    title: string;
+    updated: string;
+    intro: string;
+    sections: PolicySection[];
   };
   nav: {
     langLabel: string;

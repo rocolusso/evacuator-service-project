@@ -3,15 +3,28 @@
 import { usePathname } from 'next/navigation';
 import { useCookieStore } from '@/store/cookieStore';
 import { getTranslations } from '@/lib/i18n';
+import { updateConsent } from '@/lib/consent';
 
 export default function CookieConsent() {
-  const { accepted, accept } = useCookieStore();
+  const { status, accept, reject } = useCookieStore();
   const pathname = usePathname();
   const locale = pathname?.startsWith('/ru') ? 'ru' : 'ro';
 
-  if (accepted) return null;
+  if (status !== 'pending') return null;
 
-  const { cookie } = getTranslations(locale);
+  const t = getTranslations(locale);
+  const { cookie } = t;
+  const cookiePolicyHref = locale === 'ru' ? '/ru/politika-cookie' : '/politica-cookie-urilor';
+
+  function handleAccept() {
+    accept();
+    updateConsent(true);
+  }
+
+  function handleReject() {
+    reject();
+    updateConsent(false);
+  }
 
   return (
     <div
@@ -33,18 +46,41 @@ export default function CookieConsent() {
         >
           {'🍪 '}
           {cookie.message}
+          {' '}
+          <a
+            href={cookiePolicyHref}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline font-medium'
+          >
+            {cookie.policyLinkText}
+          </a>
         </p>
-        <button
-          type='button'
-          onClick={accept}
-          className='shrink-0 px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95'
-          style={{
-            background: 'var(--accent)',
-            color: 'var(--accent-foreground)',
-          }}
-        >
-          {cookie.accept}
-        </button>
+        <div className='flex items-center gap-2 shrink-0'>
+          <button
+            type='button'
+            onClick={handleReject}
+            className='px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95 border'
+            style={{
+              background: 'var(--card)',
+              color: 'var(--muted)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            {cookie.reject}
+          </button>
+          <button
+            type='button'
+            onClick={handleAccept}
+            className='px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95'
+            style={{
+              background: 'var(--accent)',
+              color: 'var(--accent-foreground)',
+            }}
+          >
+            {cookie.accept}
+          </button>
+        </div>
       </div>
     </div>
   );

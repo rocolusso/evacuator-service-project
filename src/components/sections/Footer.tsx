@@ -1,13 +1,17 @@
-import type { Locale } from '@/types';
+import type { Locale, LocaleCode } from '@/types';
 import PhoneLink from '@/components/client/PhoneLink';
-import Link from "next/link";
+import CookieSettingsLink from '@/components/client/CookieSettingsLink';
+import Link from 'next/link';
 
 interface FooterProps {
   t: Locale;
+  locale: LocaleCode;
 }
 
-export default function Footer({ t }: FooterProps) {
+export default function Footer({ t, locale }: FooterProps) {
   const { footer, nav } = t;
+  const privacyHref = locale === 'ru' ? '/ru/politika-konfidencialnosti' : '/politica-de-confidentialitate';
+  const cookieHref = locale === 'ru' ? '/ru/politika-cookie' : '/politica-cookie-urilor';
 
   return (
     <footer
@@ -46,6 +50,22 @@ export default function Footer({ t }: FooterProps) {
               {footer.phone}
             </PhoneLink>
           </div>
+        </div>
+
+        <div
+          className='flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 mt-4 pt-4 border-t text-xs'
+          style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
+        >
+          <Link href={privacyHref} className='underline hover:no-underline'>
+            {footer.privacyPolicyLabel}
+          </Link>
+          <Link href={cookieHref} className='underline hover:no-underline'>
+            {footer.cookiePolicyLabel}
+          </Link>
+          <CookieSettingsLink
+            label={footer.cookieSettingsLabel}
+            className='underline hover:no-underline'
+          />
         </div>
       </div>
     </footer>

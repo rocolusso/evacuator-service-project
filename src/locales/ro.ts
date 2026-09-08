@@ -123,10 +123,81 @@ const ro: Locale = {
         'Servicii prestate de: Oleksandr Shchedrov. Address: Stefan cel Mare 115/1, Chișinău',
     phone: '+37368988220',
     workingHours: 'Fără zile de odihnă 24/7',
+    cookieSettingsLabel: 'Setări cookie',
+    privacyPolicyLabel: 'Politica de confidențialitate',
+    cookiePolicyLabel: 'Politica de cookie-uri',
   },
   cookie: {
     message: 'Folosim cookie-uri pentru a îmbunătăți funcționarea site-ului. Continuând, sunteți de acord cu utilizarea acestora.',
-    accept: 'Accept',
+    accept: 'Accept toate',
+    reject: 'Refuz',
+    policyLinkText: 'Politica de cookie-uri',
+  },
+  privacyPolicy: {
+    title: 'Politica de confidențialitate',
+    updated: 'Actualizat: septembrie 2026',
+    intro: 'Această politică descrie modul în care Vezu.md colectează, utilizează și protejează datele dumneavoastră personale atunci când vizitați acest site sau solicitați serviciile noastre de evacuator.',
+    sections: [
+      {
+        heading: 'Operatorul de date',
+        body: 'Operatorul datelor cu caracter personal colectate prin acest site este Oleksandr Shchedrov, cu sediul la adresa Stefan cel Mare 115/1, Chișinău, Republica Moldova. Pentru orice întrebare legată de datele dumneavoastră, ne puteți contacta la admin@vezu.md.',
+      },
+      {
+        heading: 'Ce date colectăm',
+        body: 'Colectăm datele pe care ni le furnizați voluntar prin formularul de contact (nume, număr de telefon, mesaj) — acestea sunt transmise direct către un chat Telegram al echipei și nu sunt stocate într-o bază de date pe termen lung. De asemenea, colectăm date tehnice legate de vizita pe site (clicuri pe butonul de apel, verificare anti-bot Cloudflare Turnstile) și, doar după acordul dumneavoastră explicit, date de analiză a traficului (Google Tag Manager / Google Analytics).',
+      },
+      {
+        heading: 'Scopul prelucrării',
+        body: 'Datele sunt folosite exclusiv pentru: procesarea și onorarea solicitărilor dumneavoastră de evacuator, comunicarea cu dumneavoastră legat de o cerere trimisă, protejarea site-ului împotriva traficului automatizat/fraudulos și, cu acordul dumneavoastră, măsurarea eficienței campaniilor publicitare.',
+      },
+      {
+        heading: 'Temeiul legal',
+        body: 'Prelucrarea datelor din formularul de contact se bazează pe măsuri precontractuale la cererea dumneavoastră (art. 6(1)(b) GDPR). Verificarea anti-bot se bazează pe interesul legitim de a proteja site-ul (art. 6(1)(f) GDPR). Cookie-urile analitice și de marketing se bazează exclusiv pe consimțământul dumneavoastră explicit (art. 6(1)(a) GDPR), exprimat prin bannerul de cookie-uri.',
+      },
+      {
+        heading: 'Partajarea cu terți',
+        body: 'Datele pot fi transmise către următorii furnizori de servicii, strict în scopurile menționate mai sus: Telegram (livrarea mesajelor din formular), Google (Tag Manager, Analytics, Ads — doar după consimțământ), Cloudflare (protecție anti-bot și găzduire DNS), Vercel (găzduirea site-ului). Nu vindem și nu închiriem datele dumneavoastră către terți în scopuri de marketing.',
+      },
+      {
+        heading: 'Perioada de stocare',
+        body: 'Mesajele din formularul de contact sunt păstrate doar în istoricul chat-ului Telegram folosit pentru comunicare, atât timp cât este necesar pentru soluționarea solicitării. Datele de analiză stocate prin cookie-uri sunt păstrate conform duratei descrise în Politica privind cookie-urile.',
+      },
+      {
+        heading: 'Drepturile dumneavoastră',
+        body: 'Aveți dreptul de a solicita accesul la datele dumneavoastră, rectificarea, ștergerea, restricționarea prelucrării, opoziția față de prelucrare, precum și dreptul de a depune o plângere la autoritatea de supraveghere competentă. Pentru exercitarea acestor drepturi, ne puteți contacta la admin@vezu.md.',
+      },
+      {
+        heading: 'Cookie-uri',
+        body: 'Pentru detalii despre cookie-urile folosite pe acest site, consultați Politica privind cookie-urile.',
+      },
+    ],
+  },
+  cookiePolicy: {
+    title: 'Politica privind cookie-urile',
+    updated: 'Actualizat: septembrie 2026',
+    intro: 'Această pagină explică ce sunt cookie-urile, cum le folosim pe acest site și cum vă puteți schimba alegerea în orice moment.',
+    sections: [
+      {
+        heading: 'Ce sunt cookie-urile',
+        body: 'Cookie-urile sunt fișiere text mici stocate în browserul dumneavoastră atunci când vizitați un site. Ele pot fi strict necesare pentru funcționarea site-ului sau opționale (analitice, de marketing).',
+      },
+      {
+        heading: 'Cum folosim cookie-urile',
+        body: 'Folosim cookie-uri strict necesare pentru a reține alegerea dumneavoastră privind cookie-urile și pentru protecția anti-bot a site-ului. Cookie-urile opționale (analitice și de marketing, prin Google Tag Manager) sunt activate doar după ce apăsați „Accept toate” în bannerul afișat la prima vizită — până atunci, aceste cookie-uri nu sunt setate.',
+      },
+      {
+        heading: 'Categorii de cookie-uri folosite',
+        body: 'Necesare: cookie-consent-v2 (reține alegerea dumneavoastră, 12 luni) — nu necesită consimțământ.\nSecuritate: Cloudflare Turnstile (verificare anti-bot, sesiune) — nu necesită consimțământ, are rol de securitate.\nAnalitice/Marketing: cookie-uri Google (_ga, _gid, _gcl_au și altele similare, prin Google Tag Manager) — active doar după consimțământul dumneavoastră explicit, durata variază între 24 de ore și 2 ani.\nStatistici site: Vercel Analytics — nu folosește cookie-uri.',
+      },
+      {
+        heading: 'Cum vă puteți schimba alegerea',
+        body: 'Puteți retrage sau modifica oricând consimțământul acordat, folosind linkul „Setări cookie” din subsolul (footer) site-ului — bannerul de consimțământ va apărea din nou.',
+      },
+      {
+        heading: 'Contact',
+        body: 'Pentru întrebări legate de utilizarea cookie-urilor, ne puteți contacta la admin@vezu.md.',
+      },
+    ],
   },
   nav: {
     langLabel: 'RU',

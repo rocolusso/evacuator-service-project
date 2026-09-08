@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Montserrat } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
@@ -34,6 +35,27 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        {/*
+          Google Consent Mode v2 bootstrap. Must run before the GTM
+          container (below) or any gtag call, so consent defaults to
+          "denied" until the visitor makes an explicit choice in the
+          cookie banner (see src/lib/consent.ts / CookieConsent.tsx).
+        */}
+        <Script id='consent-mode-default' strategy='beforeInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              wait_for_update: 500
+            });
+          `}
+        </Script>
+      </head>
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className='min-h-screen flex flex-col antialiased'>
         {children}

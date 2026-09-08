@@ -3,17 +3,26 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+export type ConsentStatus = 'pending' | 'accepted' | 'rejected';
+
 interface CookieState {
-  accepted: boolean;
+  status: ConsentStatus;
   accept: () => void;
+  reject: () => void;
+  reset: () => void;
 }
 
 export const useCookieStore = create<CookieState>()(
   persist(
     (set) => ({
-      accepted: false,
-      accept: () => set({ accepted: true }),
+      status: 'pending',
+      accept: () => set({ status: 'accepted' }),
+      reject: () => set({ status: 'rejected' }),
+      reset: () => set({ status: 'pending' }),
     }),
-    { name: 'cookie-consent' },
+    // Renamed from the old boolean-only "cookie-consent" key: the shape
+    // changed (status enum instead of accepted: boolean), so we start
+    // fresh rather than trying to migrate the old value.
+    { name: 'cookie-consent-v2' },
   ),
 );

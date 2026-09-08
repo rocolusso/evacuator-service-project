@@ -64,7 +64,7 @@ export default function RuPage() {
         <DeferredContactForm t={t} />
         <SeoSection t={t} />
       </main>
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </>
   );
 }
