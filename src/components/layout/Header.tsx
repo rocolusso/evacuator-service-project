@@ -1,14 +1,33 @@
-import type { Locale } from '@/types';
+import type { Locale, LocaleCode } from '@/types';
+import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from '@/components/client/ThemeToggle';
 import PhoneLink from '@/components/client/PhoneLink';
+import BurgerMenu from '@/components/client/BurgerMenu';
 
 interface HeaderProps {
   t: Locale;
+  locale: LocaleCode;
+  /**
+   * Correct cross-locale URL for the language switcher on this specific
+   * page. `t.nav.langHref` only ever points at the other locale's
+   * homepage ('/' or '/ru'), which is right on the homepage itself but
+   * wrong everywhere else (service pages, blog articles, legal pages).
+   * Pages that aren't the homepage must pass their real RO<->RU
+   * counterpart URL here.
+   */
+  langHrefOverride?: string;
 }
 
-export default function Header({ t }: HeaderProps) {
+export default function Header({ t, locale, langHrefOverride }: HeaderProps) {
   const { nav } = t;
+  const homeHref = locale === 'ru' ? '/ru' : '/';
+  const pricingHref = locale === 'ru' ? '/ru#pricing' : '/#pricing';
+  const pricingLabel = locale === 'ru' ? 'Услуги' : 'Servicii';
+  const blogHref = locale === 'ru' ? '/ru/blog' : '/blog';
+  const blogLabel = locale === 'ru' ? 'Блог' : 'Blog';
+  const homeLabel = locale === 'ru' ? 'Главная' : 'Acasă';
+  const langHref = langHrefOverride ?? nav.langHref;
 
   return (
     <header
@@ -22,7 +41,7 @@ export default function Header({ t }: HeaderProps) {
         <div className='flex items-center justify-between h-14 md:h-16'>
           {/* Logo */}
           <a
-            href='/'
+            href={homeHref}
             className='flex items-center gap-2 font-extrabold text-base md:text-lg text-white hover:text-yellow-400 transition-colors'
             aria-label='Evacuator Chisinau — Home'
           >
@@ -33,6 +52,16 @@ export default function Header({ t }: HeaderProps) {
               <span className='text-yellow-400'> 24/7</span>
             </span>
           </a>
+
+          {/* Desktop nav links */}
+          <nav className='hidden md:flex items-center gap-5 text-sm font-semibold text-slate-300'>
+            <Link href={pricingHref} className='hover:text-yellow-400 transition-colors'>
+              {pricingLabel}
+            </Link>
+            <Link href={blogHref} className='hover:text-yellow-400 transition-colors'>
+              {blogLabel}
+            </Link>
+          </nav>
 
           {/* Right side controls */}
           <div className='flex items-center gap-3'>
@@ -54,7 +83,13 @@ export default function Header({ t }: HeaderProps) {
             </PhoneLink>
 
             <ThemeToggle />
-            <LanguageSwitcher langLabel={nav.langLabel} langHref={nav.langHref} />
+            <LanguageSwitcher langLabel={nav.langLabel} langHref={langHref} />
+            <BurgerMenu
+              locale={locale}
+              homeLabel={homeLabel}
+              pricingLabel={pricingLabel}
+              blogLabel={blogLabel}
+            />
           </div>
         </div>
       </div>

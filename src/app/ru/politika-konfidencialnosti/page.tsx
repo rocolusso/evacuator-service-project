@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <>
-      <Header t={t} />
+      <Header t={t} locale={locale} langHrefOverride='/politica-de-confidentialitate' />
       <PolicyContent
         title={t.privacyPolicy.title}
         updated={t.privacyPolicy.updated}

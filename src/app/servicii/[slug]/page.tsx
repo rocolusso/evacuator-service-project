@@ -55,6 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   const t = getTranslations(locale);
   const pageUrl = `${baseUrl}/servicii/${service.slug}`;
+  const ruMatch = servicesRu[servicesRo.findIndex((s) => s.slug === slug)];
 
   return (
     <>
@@ -65,7 +66,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         baseUrl={baseUrl}
         faqItems={service.faq}
       />
-      <Header t={t} />
+      <Header t={t} locale={locale} langHrefOverride={`/ru/uslugi/${ruMatch?.slug ?? ''}`} />
       <main className='container mx-auto px-4 py-10 md:py-16 max-w-3xl'>
         <nav className='text-xs mb-6' style={{ color: 'var(--muted)' }} aria-label='Breadcrumb'>
           <Link href='/' className='underline hover:no-underline'>Acasă</Link>

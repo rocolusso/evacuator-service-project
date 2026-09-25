@@ -30,7 +30,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <Header t={t} />
+      <Header t={t} locale={locale} langHrefOverride='/blog' />
       <main className='container mx-auto px-4 py-10 md:py-16 max-w-4xl'>
         <h1 className='text-2xl md:text-4xl font-extrabold mb-4' style={{ color: 'var(--foreground)' }}>
           Блог: советы про эвакуатор и техпомощь на дороге

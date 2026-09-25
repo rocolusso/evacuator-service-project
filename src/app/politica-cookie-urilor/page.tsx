@@ -31,7 +31,7 @@ export default function CookiePolicyPage() {
 
   return (
     <>
-      <Header t={t} />
+      <Header t={t} locale={locale} langHrefOverride='/ru/politika-cookie' />
       <PolicyContent
         title={t.cookiePolicy.title}
         updated={t.cookiePolicy.updated}

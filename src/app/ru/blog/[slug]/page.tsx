@@ -54,6 +54,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
   const t = getTranslations(locale);
   const pageUrl = `${baseUrl}/ru/blog/${article.slug}`;
+  const roMatch = blogRo[blogRu.findIndex((a) => a.slug === slug)];
 
   return (
     <>
@@ -65,7 +66,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         datePublished={article.publishedAt}
         inLanguage='ru'
       />
-      <Header t={t} />
+      <Header t={t} locale={locale} langHrefOverride={`/blog/${roMatch?.slug ?? ''}`} />
       <main className='container mx-auto px-4 py-10 md:py-16 max-w-3xl'>
         <nav className='text-xs mb-6' style={{ color: 'var(--muted)' }} aria-label='Breadcrumb'>
           <Link href='/ru' className='underline hover:no-underline'>Главная</Link>

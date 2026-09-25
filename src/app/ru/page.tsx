@@ -55,7 +55,7 @@ export default function RuPage() {
         t={t}
         baseUrl={`${baseUrl}/ru`}
       />
-      <Header t={t} />
+      <Header t={t} locale={locale} />
       <main>
         <HeroSection t={t} />
         <AdvantagesSection t={t} />

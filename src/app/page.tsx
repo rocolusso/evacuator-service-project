@@ -55,7 +55,7 @@ export default function HomePage() {
         t={t}
         baseUrl={baseUrl}
       />
-      <Header t={t} />
+      <Header t={t} locale={locale} />
       <main>
         <HeroSection t={t} />
         <AdvantagesSection t={t} />
