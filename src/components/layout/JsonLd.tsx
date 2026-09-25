@@ -9,14 +9,21 @@ interface JsonLdProps {
 function buildLocalBusinessSchema(t: Locale, baseUrl: string) {
   return {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'AutoRepair'],
+    '@type': 'AutomotiveBusiness',
     name: 'Evacuator Chisinau / Эвакуатор Кишинев',
     '@id': baseUrl,
     url: baseUrl,
     telephone: '+37368988220',
-    priceRange: '400 MDL - 1500 MDL',
+    priceRange: '450 MDL - 1500 MDL',
     description: t.meta.description,
     image: `${baseUrl}/og-image.jpg`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Strada Vissarion Belinski 71',
+      addressLocality: 'Chișinău',
+      postalCode: 'MD-2064',
+      addressCountry: 'MD',
+    },
     areaServed: {
       '@type': 'City',
       name: 'Chisinau',

@@ -94,11 +94,11 @@ export default function HeroSection({ t }: HeroSectionProps) {
           </span>
           <span className='flex items-center gap-2'>
             <span aria-hidden='true'>🛡️</span>
-            Fără costuri ascunse
+            {hero.trustNoHidden}
           </span>
           <span className='flex items-center gap-2'>
             <span aria-hidden='true'>📍</span>
-            Chișinău & Moldova
+            {hero.trustArea}
           </span>
         </div>
       </div>

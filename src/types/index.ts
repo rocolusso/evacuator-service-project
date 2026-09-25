@@ -36,6 +36,8 @@ export interface Locale {
     ctaCall: string;
     ctaPrice: string;
     badge: string;
+    trustNoHidden: string;
+    trustArea: string;
   };
   advantages: {
     h2: string;

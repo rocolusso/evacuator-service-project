@@ -2,7 +2,7 @@ import type { Locale } from '@/types';
 
 const ro: Locale = {
   meta: {
-    title: 'Evacuator Chisinau 24/7 | Intervenție rapidă de la 400 MDL',
+    title: 'Evacuator Chisinau 24/7 | Intervenție rapidă de la 450 MDL',
     description:
         'Evacuator auto din Chișinău și toată Moldova. Sosire în 15-20+ de minute. Tractări auto, moto și tehnică specială până la 15 tone. Prețuri oneste, fără costuri ascunse.',
     ogTitle: 'Evacuator Chisinau 24/7 — Asistență Rutieră Urgentă',
@@ -16,6 +16,8 @@ const ro: Locale = {
     ctaCall: 'Cheamă evacuatorul',
     ctaPrice: 'Află prețurile',
     badge: '24/7 Fără zile de odihnă',
+    trustNoHidden: 'Fără costuri ascunse',
+    trustArea: 'Chișinău & Moldova',
   },
   advantages: {
     h2: 'Cum chemi evacuatorul? Doar 3 pași',
@@ -120,7 +122,7 @@ const ro: Locale = {
   },
   footer: {
     rights: '© 2026 Vezu.md. Toate drepturile rezervate.\n' +
-        'Servicii prestate de: Oleksandr Shchedrov. Address: Stefan cel Mare 115/1, Chișinău',
+        'Servicii prestate de: Oleksandr Shchedrov. Adresă: Strada Vissarion Belinski 71, MD-2064, Chișinău',
     phone: '+37368988220',
     workingHours: 'Fără zile de odihnă 24/7',
     cookieSettingsLabel: 'Setări cookie',
@@ -140,7 +142,7 @@ const ro: Locale = {
     sections: [
       {
         heading: 'Operatorul de date',
-        body: 'Operatorul datelor cu caracter personal colectate prin acest site este Oleksandr Shchedrov, cu sediul la adresa Stefan cel Mare 115/1, Chișinău, Republica Moldova. Pentru orice întrebare legată de datele dumneavoastră, ne puteți contacta la admin@vezu.md.',
+        body: 'Operatorul datelor cu caracter personal colectate prin acest site este Oleksandr Shchedrov, cu sediul la adresa Strada Vissarion Belinski 71, MD-2064, Chișinău, Republica Moldova. Pentru orice întrebare legată de datele dumneavoastră, ne puteți contacta la admin@vezu.md.',
       },
       {
         heading: 'Ce date colectăm',
