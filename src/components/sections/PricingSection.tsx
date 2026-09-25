@@ -1,4 +1,5 @@
 import type { Locale } from '@/types';
+import Link from 'next/link';
 
 interface PricingSectionProps {
   t: Locale;
@@ -33,45 +34,57 @@ export default function PricingSection({ t }: PricingSectionProps) {
         </p>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto mb-20'>
-          {pricing.items.map((item, idx) => (
-            <article
-              key={idx}
-              className='flex flex-col items-center text-center p-6 rounded-2xl border transition-all duration-200 hover:scale-[1.03] hover:shadow-lg'
-              style={{
-                background: 'var(--card)',
-                borderColor: 'var(--card-border)',
-              }}
-            >
-              <div className='text-5xl mb-4' aria-hidden='true'>{item.icon}</div>
+          {pricing.items.map((item, idx) => {
+            const cardClassName = 'flex flex-col items-center text-center p-6 rounded-2xl border transition-all duration-200 hover:scale-[1.03] hover:shadow-lg';
+            const cardStyle = {
+              background: 'var(--card)',
+              borderColor: 'var(--card-border)',
+            };
+            const content = (
+              <>
+                <div className='text-5xl mb-4' aria-hidden='true'>{item.icon}</div>
 
-              <h3
-                className='text-base font-bold mb-4 leading-snug'
-                style={{ color: 'var(--foreground)' }}
-              >
-                {item.title}
-              </h3>
-
-              <div className='mt-auto'>
-                <p
-                  className='text-2xl font-extrabold'
-                  style={{ color: 'var(--accent-foreground)' }}
+                <h3
+                  className='text-base font-bold mb-4 leading-snug'
+                  style={{ color: 'var(--foreground)' }}
                 >
-                  <span
-                    className='inline-block px-3 py-1 rounded-lg text-slate-900 text-xl font-extrabold'
-                    style={{ background: 'var(--accent)' }}
+                  {item.title}
+                </h3>
+
+                <div className='mt-auto'>
+                  <p
+                    className='text-2xl font-extrabold'
+                    style={{ color: 'var(--accent-foreground)' }}
                   >
-                    {item.price}
-                  </span>
-                </p>
-                <p
-                  className='text-sm mt-2 font-medium'
-                  style={{ color: 'var(--muted)' }}
-                >
-                  {item.per}
-                </p>
-              </div>
-            </article>
-          ))}
+                    <span
+                      className='inline-block px-3 py-1 rounded-lg text-slate-900 text-xl font-extrabold'
+                      style={{ background: 'var(--accent)' }}
+                    >
+                      {item.price}
+                    </span>
+                  </p>
+                  <p
+                    className='text-sm mt-2 font-medium'
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    {item.per}
+                  </p>
+                </div>
+              </>
+            );
+
+            return item.slug
+              ? (
+                <Link key={idx} href={item.slug} className={cardClassName} style={cardStyle}>
+                  {content}
+                </Link>
+              )
+              : (
+                <article key={idx} className={cardClassName} style={cardStyle}>
+                  {content}
+                </article>
+              );
+          })}
         </div>
 
         {/* Additional Services */}
@@ -85,30 +98,42 @@ export default function PricingSection({ t }: PricingSectionProps) {
         <div className='w-16 h-1 rounded-full mx-auto mb-12' style={{ background: 'var(--accent)' }} />
 
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto'>
-          {services.items.map((service, idx) => (
-            <article
-              key={idx}
-              className='flex flex-col items-start p-6 rounded-2xl border transition-all duration-200'
-              style={{
-                background: 'var(--surface)',
-                borderColor: 'var(--border)',
-              }}
-            >
-              <span className='text-3xl mb-3' aria-hidden='true'>{service.icon}</span>
-              <h3
-                className='text-base md:text-lg font-bold mb-2'
-                style={{ color: 'var(--foreground)' }}
-              >
-                {service.title}
-              </h3>
-              <p
-                className='text-sm leading-relaxed'
-                style={{ color: 'var(--muted)' }}
-              >
-                {service.desc}
-              </p>
-            </article>
-          ))}
+          {services.items.map((service, idx) => {
+            const cardClassName = 'flex flex-col items-start p-6 rounded-2xl border transition-all duration-200';
+            const cardStyle = {
+              background: 'var(--surface)',
+              borderColor: 'var(--border)',
+            };
+            const content = (
+              <>
+                <span className='text-3xl mb-3' aria-hidden='true'>{service.icon}</span>
+                <h3
+                  className='text-base md:text-lg font-bold mb-2'
+                  style={{ color: 'var(--foreground)' }}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className='text-sm leading-relaxed'
+                  style={{ color: 'var(--muted)' }}
+                >
+                  {service.desc}
+                </p>
+              </>
+            );
+
+            return service.slug
+              ? (
+                <Link key={idx} href={service.slug} className={cardClassName} style={cardStyle}>
+                  {content}
+                </Link>
+              )
+              : (
+                <article key={idx} className={cardClassName} style={cardStyle}>
+                  {content}
+                </article>
+              );
+          })}
         </div>
       </div>
     </section>

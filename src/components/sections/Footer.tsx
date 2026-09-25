@@ -2,6 +2,7 @@ import type { Locale, LocaleCode } from '@/types';
 import PhoneLink from '@/components/client/PhoneLink';
 import CookieSettingsLink from '@/components/client/CookieSettingsLink';
 import Link from 'next/link';
+import { servicesRo, servicesRu } from '@/content/services';
 
 interface FooterProps {
   t: Locale;
@@ -12,6 +13,10 @@ export default function Footer({ t, locale }: FooterProps) {
   const { footer, nav } = t;
   const privacyHref = locale === 'ru' ? '/ru/politika-konfidencialnosti' : '/politica-de-confidentialitate';
   const cookieHref = locale === 'ru' ? '/ru/politika-cookie' : '/politica-cookie-urilor';
+  const services = locale === 'ru' ? servicesRu : servicesRo;
+  const blogHref = locale === 'ru' ? '/ru/blog' : '/blog';
+  const blogLabel = locale === 'ru' ? 'Блог' : 'Blog';
+  const servicesLabel = locale === 'ru' ? 'Услуги' : 'Servicii';
 
   return (
     <footer
@@ -50,6 +55,21 @@ export default function Footer({ t, locale }: FooterProps) {
               {footer.phone}
             </PhoneLink>
           </div>
+        </div>
+
+        <div
+          className='flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 mt-4 pt-4 border-t text-xs'
+          style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
+        >
+          <span className='font-semibold' style={{ color: 'var(--foreground)' }}>{servicesLabel}:</span>
+          {services.map((service) => (
+            <Link key={service.slug} href={`/${locale === 'ru' ? 'ru/uslugi' : 'servicii'}/${service.slug}`} className='underline hover:no-underline'>
+              {service.icon} {service.h1}
+            </Link>
+          ))}
+          <Link href={blogHref} className='underline hover:no-underline'>
+            📰 {blogLabel}
+          </Link>
         </div>
 
         <div

@@ -10,12 +10,39 @@ export interface PricingItem {
   price: string;
   per: string;
   icon: string;
+  slug?: string;
 }
 
 export interface ServiceItem {
   title: string;
   desc: string;
   icon: string;
+  slug?: string;
+}
+
+export interface ServicePageData {
+  slug: string;
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  icon: string;
+  priceFrom: string;
+  pricePer: string;
+  paragraphs: string[];
+  bullets: string[];
+  faq: FaqItem[];
+}
+
+export interface BlogArticleData {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  icon: string;
+  excerpt: string;
+  publishedAt: string;
+  paragraphs: string[];
+  faq: FaqItem[];
 }
 
 export interface PolicySection {

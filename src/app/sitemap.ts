@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { servicesRo, servicesRu } from '@/content/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
@@ -41,5 +42,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    ...servicesRo.map((service) => ({
+      url: `${baseUrl}/servicii/${service.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    ...servicesRu.map((service) => ({
+      url: `${baseUrl}/ru/uslugi/${service.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ];
 }
