@@ -25,6 +25,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: ['/'],
+        disallow: [
+          '/politica-de-confidentialitate',
+          '/ru/politika-konfidencialnosti',
+          '/politica-cookie-urilor',
+          '/ru/politika-cookie',
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
