@@ -55,6 +55,7 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="MibK2ek2ikjsInY36M9g/A" strategy="afterInteractive"/>
       </head>
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className='min-h-screen flex flex-col antialiased'>
