@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ─── CSS Custom Properties (Light theme default) ─── */
+/* ─── CSS Custom Properties ─── */
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
@@ -17,25 +17,6 @@
   --card-border: #e2e8f0;
   --hero-bg: #0f172a;
   --hero-overlay: rgba(15, 23, 42, 0.88);
-}
-
-/* ─── Dark theme ─── */
-[data-theme='dark'] {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --surface: #1e293b;
-  --surface-hover: #334155;
-  --border: #334155;
-  --accent: #facc15;
-  --accent-hover: #eab308;
-  --accent-foreground: #0f172a;
-  --accent-green: #22c55e;
-  --accent-green-hover: #16a34a;
-  --muted: #94a3b8;
-  --card: #1e293b;
-  --card-border: #334155;
-  --hero-bg: #020617;
-  --hero-overlay: rgba(2, 6, 23, 0.92);
 }
 
 /* ─── Base styles ─── */
@@ -93,15 +74,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-pulse {
   animation: pulse-ring 1.5s ease-in-out infinite;
-}
-
-/* ─── Smooth theme transition ─── */
-*,
-*::before,
-*::after {
-  transition-property: background-color, border-color, color;
-  transition-duration: 150ms;
-  transition-timing-function: ease;
 }
 
 /* ─── Scrollbar styling ─── */

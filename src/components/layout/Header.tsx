@@ -1,7 +1,6 @@
 import type { Locale, LocaleCode } from '@/types';
 import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
-import ThemeToggle from '@/components/client/ThemeToggle';
 import PhoneLink from '@/components/client/PhoneLink';
 import BurgerMenu from '@/components/client/BurgerMenu';
 
@@ -82,7 +81,6 @@ export default function Header({ t, locale, langHrefOverride }: HeaderProps) {
               {nav.phone}
             </PhoneLink>
 
-            <ThemeToggle />
             <LanguageSwitcher langLabel={nav.langLabel} langHref={langHref} />
             <BurgerMenu
               locale={locale}

@@ -11,7 +11,7 @@ interface CookieSettingsLinkProps {
  * Small client-only control that reopens the cookie consent banner by
  * resetting the persisted choice back to "pending". Kept as its own
  * tiny client component (rather than making the whole Footer a client
- * component) — same pattern already used for ThemeToggle/PhoneLink.
+ * component) — same pattern already used for PhoneLink.
  */
 export default function CookieSettingsLink({ label, className }: CookieSettingsLinkProps) {
   const reset = useCookieStore((state) => state.reset);
