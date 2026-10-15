@@ -1,76 +1,26 @@
-import type { Locale, LocaleCode, FaqItem } from '@/types';
+import type { Locale, LocaleCode } from '@/types';
+import SchemaScript from '@/components/layout/SchemaScript';
+import {
+  LABELS, baseGraph, breadcrumbNode, faqNode, homeUrl, webPageNode,
+} from '@/lib/jsonld';
 
 interface JsonLdProps {
   locale: LocaleCode;
   t: Locale;
-  baseUrl: string;
 }
 
-function buildLocalBusinessSchema(t: Locale, baseUrl: string) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'AutomotiveBusiness',
-    name: 'Evacuator Chisinau / Эвакуатор Кишинев',
-    '@id': baseUrl,
-    url: baseUrl,
-    telephone: '+37368988220',
-    priceRange: '450 MDL - 1500 MDL',
-    description: t.meta.description,
-    image: `${baseUrl}/og-image.jpg`,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Strada Vissarion Belinski 71',
-      addressLocality: 'Chișinău',
-      postalCode: 'MD-2064',
-      addressCountry: 'MD',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: 'Chisinau',
-      addressCountry: 'MD',
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: [
-        'Monday', 'Tuesday', 'Wednesday',
-        'Thursday', 'Friday', 'Saturday', 'Sunday',
-      ],
-      opens: '00:00',
-      closes: '23:59',
-    },
-    hasMap: 'https://maps.google.com/?q=Chisinau,Moldova',
-  };
-}
-
-function buildFaqSchema(items: FaqItem[]) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: items.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a,
-      },
-    })),
-  };
-}
-
-export default function JsonLd({ t, baseUrl }: JsonLdProps) {
-  const localBusiness = buildLocalBusinessSchema(t, baseUrl);
-  const faq = buildFaqSchema(t.faq.items);
+/** Home page graph: WebSite + business + breadcrumb + WebPage + FAQPage. */
+export default function JsonLd({ locale, t }: JsonLdProps) {
+  const url = homeUrl(locale);
 
   return (
-    <>
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
-      />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
-      />
-    </>
+    <SchemaScript
+      graph={[
+        ...baseGraph(locale),
+        breadcrumbNode(url, [{ name: LABELS.home[locale], url }]),
+        webPageNode({ url, locale, name: t.meta.title, description: t.meta.description }),
+        faqNode(url, locale, t.faq.items),
+      ]}
+    />
   );
 }

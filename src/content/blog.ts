@@ -284,7 +284,7 @@ export const blogRu: BlogArticleData[] = [
   {
     slug: 'razryazhennyi-akkumulyator-prichiny',
     title: 'Разряженный аккумулятор: причины и когда нужен не прикуриватель, а эвакуатор',
-    metaTitle: 'Разряженный аккумулятор: причины и когда нужен эвакуатор, а не прикуривание',
+    metaTitle: 'Разряженный аккумулятор: причины и когда нужен эвакуатор',
     metaDescription: 'Основные причины разрядки аккумулятора и признаки, по которым можно понять, поможет ли прикуривание или нужна полноценная эвакуация.',
     icon: '🔌',
     excerpt: 'Как отличить обычную разрядку от более серьёзной поломки до вызова техники.',
@@ -523,7 +523,7 @@ export const blogRo: BlogArticleData[] = [
   {
     slug: 'evacuator-cu-manipulator-cand-este-necesar',
     title: 'Evacuator cu manipulator: când este necesar și cum diferă de cel obișnuit',
-    metaTitle: 'Evacuator cu manipulator: când e necesar și diferența față de cel clasic',
+    metaTitle: 'Evacuator cu manipulator vs clasic: când e necesar',
     metaDescription: 'Explicăm diferența dintre un evacuator clasic și unul cu manipulator: când e nevoie de ridicare fără tractare și cât costă.',
     icon: '🔧',
     excerpt: 'Ce diferă la manipulator față de platformă și în ce situații nu te poți descurca fără el.',
@@ -613,8 +613,8 @@ export const blogRo: BlogArticleData[] = [
   {
     slug: 'evacuare-tehnica-speciala-particularitati',
     title: 'Evacuare tehnică specială (tractoare, încărcătoare): particularități',
-    metaTitle: 'Evacuare tehnică specială în Chișinău: tractoare, încărcătoare, particularități',
-    metaDescription: 'Ce trebuie luat în calcul la comandarea evacuării tehnicii speciale: greutate, gabarit, tip de fixare. Tractoare, încărcătoare și alte utilaje de până la 15 tone.',
+    metaTitle: 'Evacuare tehnică specială în Chișinău: tractoare, utilaje',
+    metaDescription: 'Ce trebuie luat în calcul la comandarea evacuării tehnicii speciale: greutate, gabarit, fixare. Tractoare, încărcătoare și alte utilaje de până la 15 tone.',
     icon: '🚜',
     excerpt: 'Cu ce diferă transportul tehnicii speciale de cel al unui autoturism și ce trebuie spus dispecerului.',
     publishedAt: '2026-10-01',
@@ -658,7 +658,7 @@ export const blogRo: BlogArticleData[] = [
   {
     slug: 'evacuator-suv-microbuz-pret',
     title: 'Evacuator pentru SUV și microbuz: cu ce diferă prețul față de autoturisme',
-    metaTitle: 'Evacuator pentru SUV și microbuz: diferența de preț față de autoturisme',
+    metaTitle: 'Evacuator pentru SUV și microbuz: diferența de preț',
     metaDescription: 'De ce evacuarea unui SUV sau microbuz costă mai mult decât cea a unui autoturism și cum se calculează prețul final.',
     icon: '🚙',
     excerpt: 'De unde vine diferența de preț dintre un autoturism și un SUV la evacuare.',
@@ -750,7 +750,7 @@ export const blogRo: BlogArticleData[] = [
   {
     slug: 'baterie-descarcata-cauze',
     title: 'Baterie descărcată: cauze și când ai nevoie nu de pornire, ci de evacuator',
-    metaTitle: 'Baterie descărcată: cauze și când ai nevoie de evacuator, nu de pornire',
+    metaTitle: 'Baterie descărcată: cauze și când e nevoie de evacuator',
     metaDescription: 'Principalele cauze ale descărcării bateriei și semnele după care înțelegi dacă ajută pornirea cu booster sau e nevoie de evacuare completă.',
     icon: '🔌',
     excerpt: 'Cum deosebești o descărcare obișnuită de o defecțiune mai serioasă, înainte de a chema tehnica.',

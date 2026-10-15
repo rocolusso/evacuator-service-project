@@ -4,7 +4,7 @@ const ro: Locale = {
   meta: {
     title: 'Evacuator Chisinau 24/7 | Intervenție rapidă de la 450 MDL',
     description:
-        'Evacuator auto din Chișinău și toată Moldova. Sosire în 15-20+ de minute. Tractări auto, moto și tehnică specială până la 15 tone. Prețuri oneste, fără costuri ascunse.',
+        'Evacuator auto în Chișinău și toată Moldova. Sosire în 15-20+ de minute. Tractăm auto, moto și tehnică specială până la 15 tone. Fără costuri ascunse.',
     ogTitle: 'Evacuator Chisinau 24/7 — Asistență Rutieră Urgentă',
     ogDescription:
         'Ai rămas pe traseu? Cheamă evacuatorul în Chișinău. Ajungem în 15-20+ minute, lucrăm non-stop. Transportăm orice, de la autoturisme la utilaje speciale.',

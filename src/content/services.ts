@@ -54,7 +54,7 @@ export const servicesRo: ServicePageData[] = [
   {
     slug: 'evacuare-tehnica-speciala',
     h1: 'Evacuare tehnică specială: tractoare și încărcătoare până la 15 tone',
-    metaTitle: 'Evacuare tehnică specială Chișinău | tractoare, încărcătoare, de la 800 MDL',
+    metaTitle: 'Evacuare tehnică specială Chișinău | utilaje, de la 800 MDL',
     metaDescription: 'Evacuăm tehnică specială (tractoare, încărcătoare, utilaje) de până la 15 tone în Chișinău și Moldova. Preț de la 800 MDL + 16 MDL/km, echipaj cu experiență.',
     icon: '🚛',
     priceFrom: 'de la 800 MDL',
@@ -79,8 +79,8 @@ export const servicesRo: ServicePageData[] = [
   {
     slug: 'evacuator-cu-manipulator',
     h1: 'Evacuator cu manipulator în Chișinău',
-    metaTitle: 'Evacuator cu manipulator Chișinău | mașini blocate, în șanț sau accidentate',
-    metaDescription: 'Evacuator cu manipulator pentru mașini cu roțile blocate, aflate într-un șanț sau greu accesibile. Ridicare fără tractare, deplasare rapidă în Chișinău, non-stop.',
+    metaTitle: 'Evacuator cu manipulator Chișinău | mașini blocate, în șanț',
+    metaDescription: 'Evacuator cu manipulator pentru mașini cu roțile blocate, într-un șanț sau greu accesibile. Ridicare fără tractare, deplasare rapidă în Chișinău, non-stop.',
     icon: '🔧',
     priceFrom: 'preț calculat la apel',
     pricePer: 'în funcție de situație',
@@ -105,7 +105,7 @@ export const servicesRo: ServicePageData[] = [
     slug: 'pornire-baterie',
     h1: 'Pornire baterie auto (curent) în Chișinău',
     metaTitle: 'Pornire baterie auto Chișinău | booster 12V/24V, non-stop',
-    metaDescription: 'Baterie descărcată? Venim rapid în Chișinău pentru pornirea motorului cu booster 12V/24V, în siguranță pentru electronica auto. Serviciu non-stop, fără evacuare.',
+    metaDescription: 'Baterie descărcată? Venim în Chișinău pentru pornirea motorului cu booster 12V/24V, în siguranță pentru electronica auto. Serviciu non-stop, fără evacuare.',
     icon: '🔋',
     priceFrom: 'preț calculat la apel',
     pricePer: 'în funcție de locație',
@@ -207,7 +207,7 @@ export const servicesRu: ServicePageData[] = [
   {
     slug: 'evakuator-s-manipulyatorom',
     h1: 'Эвакуатор с манипулятором в Кишиневе',
-    metaTitle: 'Эвакуатор с манипулятором Кишинев | авто в кювете, заблокированные колеса',
+    metaTitle: 'Эвакуатор с манипулятором Кишинев | авто в кювете',
     metaDescription: 'Эвакуатор с манипулятором для авто с заблокированными колесами, в кювете или в труднодоступном месте. Подъем без буксировки, быстрый выезд по Кишиневу.',
     icon: '🔧',
     priceFrom: 'цена по звонку',
