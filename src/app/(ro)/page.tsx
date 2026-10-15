@@ -44,8 +44,8 @@ export default function HomePage() {
       <JsonLd locale={locale} t={t} />
       <Header t={t} locale={locale} />
       <main>
-        <HeroSection t={t} />
         <Hero_sub_photo/>
+        <HeroSection t={t} />
         <AdvantagesSection t={t} />
         <PricingSection t={t} />
         <FaqSection t={t} />
