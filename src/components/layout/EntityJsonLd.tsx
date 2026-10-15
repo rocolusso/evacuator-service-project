@@ -86,7 +86,7 @@ export function BlogIndexJsonLd({ locale, pageTitle, description, articles }: Bl
           { name: LABELS.blog[locale], url },
         ]),
         webPageNode({ url, locale, name: pageTitle, description, type: 'CollectionPage', mainEntityId: `${url}#list` }),
-        blogListNode(url, locale, articles),
+        blogListNode(url, articles),
       ]}
     />
   );

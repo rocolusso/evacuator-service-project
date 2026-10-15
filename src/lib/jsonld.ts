@@ -82,7 +82,7 @@ export function organizationNode(locale: LocaleCode): SchemaNode {
       addressCountry: 'MD',
     },
     areaServed: [
-      { '@type': 'City', name: 'Chișinău', addressCountry: 'MD' },
+      { '@type': 'City', name: 'Chișinău' },
       { '@type': 'Country', name: 'Moldova' },
     ],
     openingHoursSpecification: {
@@ -192,15 +192,15 @@ export function serviceNode({ url, locale, name, description, priceFrom, pricePe
     name,
     description,
     url,
-    inLanguage: locale,
     provider: ref(ID.organization),
     areaServed: [
-      { '@type': 'City', name: 'Chișinău', addressCountry: 'MD' },
+      { '@type': 'City', name: 'Chișinău' },
       { '@type': 'Country', name: 'Moldova' },
     ],
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: url,
+      availableLanguage: locale,
       servicePhone: { '@type': 'ContactPoint', telephone: PHONE, availableLanguage: ['ro', 'ru'] },
     },
     ...(price
@@ -246,11 +246,10 @@ export function articleNode({ url, locale, headline, description, datePublished,
   };
 }
 
-export function blogListNode(url: string, locale: LocaleCode, articles: { title: string; url: string }[]): SchemaNode {
+export function blogListNode(url: string, articles: { title: string; url: string }[]): SchemaNode {
   return {
     '@type': 'ItemList',
     '@id': `${url}#list`,
-    inLanguage: locale,
     numberOfItems: articles.length,
     itemListElement: articles.map((a, i) => ({
       '@type': 'ListItem',
