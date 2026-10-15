@@ -10,7 +10,7 @@ import FaqSection from '@/components/sections/FaqSection';
 import SeoSection from '@/components/sections/SeoSection';
 import Footer from '@/components/sections/Footer';
 import DeferredContactForm from '@/components/client/DeferredContactForm';
-import Hero_sub_photo from "@/components/sections/Hero_sub_photo";
+import Hero_sub_photo from '@/components/sections/Hero_sub_photo';
 
 export const revalidate = 86400;
 
