@@ -1,4 +1,5 @@
 import type { Locale, SeoBlock } from '@/types';
+import ReadMore from '@/components/ui/ReadMore';
 
 interface SeoSectionProps {
   t: Locale;
@@ -31,8 +32,34 @@ function SeoHeading({ block }: { block: SeoBlock }) {
   }
 }
 
+function SeoBlockView({ block }: { block: SeoBlock }) {
+  return (
+    <div>
+      <SeoHeading block={block} />
+
+      {block.body && (
+        <p
+          className='text-sm md:text-base leading-relaxed mb-4'
+          style={{ color: 'var(--muted)' }}
+        >
+          {block.body}
+        </p>
+      )}
+
+      {block.bullets && block.bullets.length > 0 && (
+        <ul className='list-disc pl-5 mb-4 text-sm md:text-base leading-relaxed space-y-1' style={{ color: 'var(--muted)' }}>
+          {block.bullets.map((bullet, bIdx) => (
+            <li key={bIdx}>{bullet}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function SeoSection({ t }: SeoSectionProps) {
-  const { seo } = t;
+  const { seo, ui } = t;
+  const [lead, ...rest] = seo.items;
 
   return (
     <section
@@ -41,28 +68,20 @@ export default function SeoSection({ t }: SeoSectionProps) {
       aria-label='About service'
     >
       <div className='container mx-auto px-4 max-w-4xl'>
-        {seo.items.map((block, idx) => (
-          <div key={idx}>
-            <SeoHeading block={block} />
+        {lead && <SeoBlockView block={lead} />}
 
-            {block.body && (
-              <p
-                className='text-sm md:text-base leading-relaxed mb-4'
-                style={{ color: 'var(--muted)' }}
-              >
-                {block.body}
-              </p>
-            )}
-
-            {block.bullets && block.bullets.length > 0 && (
-              <ul className='list-disc pl-5 mb-4 text-sm md:text-base leading-relaxed space-y-1' style={{ color: 'var(--muted)' }}>
-                {block.bullets.map((bullet, bIdx) => (
-                  <li key={bIdx}>{bullet}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
+        {rest.length > 0 && (
+          <ReadMore
+            maxHeight={400}
+            fadeColor='var(--background)'
+            expandLabel={ui.readMore}
+            collapseLabel={ui.readLess}
+          >
+            {rest.map((block, idx) => (
+              <SeoBlockView key={idx} block={block} />
+            ))}
+          </ReadMore>
+        )}
       </div>
     </section>
   );

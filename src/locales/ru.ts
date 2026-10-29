@@ -370,6 +370,10 @@ const ru: Locale = {
     langHref: '/',
     phone: '+37368988220',
   },
+  ui: {
+    readMore: 'Читать полностью',
+    readLess: 'Свернуть',
+  },
   form: {
     title: 'Вызвать эвакуатор',
     namePlaceholder: 'Ваше имя',

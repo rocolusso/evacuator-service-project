@@ -95,6 +95,10 @@ export interface Locale {
   seo: {
     items: SeoBlock[];
   };
+  ui: {
+    readMore: string;
+    readLess: string;
+  };
   footer: {
     rights: string;
     phone: string;

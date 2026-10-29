@@ -370,6 +370,10 @@ const ro: Locale = {
     langHref: '/ru',
     phone: '+37368988220',
   },
+  ui: {
+    readMore: 'Citește tot',
+    readLess: 'Restrânge',
+  },
   form: {
     title: 'Cheamă evacuatorul',
     namePlaceholder: 'Numele tău',
