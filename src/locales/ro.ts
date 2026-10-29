@@ -2,10 +2,10 @@ import type { Locale } from '@/types';
 
 const ro: Locale = {
   meta: {
-    title: 'Evacuator Chisinau 24/7 | Intervenție rapidă de la 450 MDL',
+    title: 'Evacuator Chișinău 24/7: ajunge în 15-20 minute, de la 450 MDL',
     description:
-        'Evacuator auto în Chișinău și toată Moldova. Sosire în 15-20+ de minute. Tractăm auto, moto și tehnică specială până la 15 tone. Fără costuri ascunse.',
-    ogTitle: 'Evacuator Chisinau 24/7 — Asistență Rutieră Urgentă',
+        'Aveți nevoie de evacuator în Chișinău? Vezu.md ajunge în 15-20+ minute, non-stop. Autoturisme, SUV-uri și utilaje până la 15 t. Preț fix de la 450 MDL.',
+    ogTitle: 'Evacuator Chișinău 24/7 — Asistență Rutieră Urgentă',
     ogDescription:
         'Ai rămas pe traseu? Cheamă evacuatorul în Chișinău. Ajungem în 15-20+ minute, lucrăm non-stop. Transportăm orice, de la autoturisme la utilaje speciale.',
   },
@@ -115,15 +115,174 @@ const ro: Locale = {
     ],
   },
   seo: {
-    h2: 'Evacuator profesional în Chișinău: asistență rutieră de încredere 24/7',
-    text1:
-        'Defecțiunea mașinii sau un accident rutier se întâmplă mereu la momentul nepotrivit. Serviciul nostru oferă servicii de evacuator în Chișinău, precum și transport interurban al automobilelor pe întreg teritoriul Republicii Moldova.',
-    h3_1: 'De ce este important să chemi tehnică specializată verificată?',
-    text2:
-        'Noi folosim platforme moderne, trolii și manipulatoare, garantând siguranța totală a vehiculului dumneavoastră la încărcare și descărcare. Transportăm: autoturisme, SUV-uri grele, microbuze și tehnică specială de până la 15 tone.',
-    h3_2: 'Operativitate și accesibilitate',
-    text3:
-        'Serviciul de autoevacuare activează non-stop. Datorită distribuției corecte a autospecialelor pe sectoarele capitalei (Botanica, Centru, Rîșcani, Buiucani, Ciocana), timpul de așteptare se reduce la minimum. Un singur apel vă rezolvă problema chiar acum.',
+    items: [
+      {
+        level: 'h2',
+        heading: 'Evacuator profesional în Chișinău: asistență rutieră de încredere 24/7',
+        body: 'Defecțiunea mașinii sau un accident rutier se întâmplă mereu la momentul nepotrivit. Serviciul nostru oferă evacuator în Chișinău, precum și transport interurban al automobilelor pe întreg teritoriul Republicii Moldova.',
+      },
+      {
+        level: 'h3',
+        heading: 'Ce trebuie să aveți pregătit când sunați',
+        body: 'Spuneți dispecerului unde vă aflați, ce mașină conduceți și de ce s-a oprit — astfel vă putem comunica mai rapid prețul exact și ora de sosire.',
+        bullets: [
+          'Strada și numărul casei sau un punct de reper din apropiere',
+          'Marca și modelul mașinii',
+          'Ce s-a întâmplat: o pană, bateria descărcată, un accident sau mașina blocată într-un șanț',
+          'Dacă roțile se învârt și dacă mașina are cutie de viteze automată sau tracțiune integrală',
+        ],
+      },
+      {
+        level: 'h3',
+        heading: 'Ce influențează prețul final',
+        body: 'Trei factori influențează suma totală: distanța, greutatea și tipul vehiculului, precum și gradul de dificultate al încărcării. O mașină care nu poate fi pur și simplu rulată pe platformă necesită mai mult echipament și mai mult timp, iar prețul reflectă acest lucru. Vă comunicăm suma finală la telefon, ca să o puteți compara cu alte oferte înainte de a decide.',
+      },
+      {
+        level: 'h4',
+        heading: 'Roți blocate',
+        body: 'Dacă roțile sunt blocate, mașina nu poate fi rulată pe platformă, așa că trimitem un evacuator cu manipulator.',
+      },
+      {
+        level: 'h4',
+        heading: 'Mașină într-un șanț',
+        body: 'O mașină care a ajuns într-un șanț necesită, de asemenea, un evacuator cu manipulator.',
+      },
+      {
+        level: 'h2',
+        heading: 'Motive frecvente pentru a apela un evacuator în Chișinău',
+      },
+      {
+        level: 'h3',
+        heading: 'Pană pe șosea',
+        body: 'Un motor care nu pornește, o cutie de viteze defectă sau o suspensie avariată duc toate la același rezultat: mașina nu se poate deplasa din proprie inițiativă. Descrieți simptomele dispecerului și vă trimitem un evacuator potrivit pentru vehiculul dumneavoastră.',
+      },
+      {
+        level: 'h3',
+        heading: 'Baterie descărcată',
+        body: 'Uneori, motorul are nevoie doar de un impuls de pornire. Pentru asta folosim un dispozitiv de pornire de 12 V sau 24 V. Dacă mașina tot nu pornește, spuneți dispecerului și vă organizăm evacuarea.',
+      },
+      {
+        level: 'h3',
+        heading: 'Accident rutier',
+        body: 'După o coliziune, roțile, direcția sau suspensia sunt adesea avariate. Spuneți dispecerului dacă mașina se poate deplasa, astfel încât echipamentul potrivit să ajungă de la prima încercare.',
+      },
+      {
+        level: 'h3',
+        heading: 'Mașină într-un șanț sau cu roțile blocate',
+        body: 'Aceste mașini nu pot fi urcate pe o platformă. Un evacuator cu manipulator se ocupă de ambele situații.',
+      },
+      {
+        level: 'h3',
+        heading: 'Transportul utilajelor grele',
+        body: 'Tractoarele și încărcătoarele de până la 15 tone pot fi transportate, de asemenea, cu evacuatorul. Acest lucru este util atunci când utilajul s-a defectat la fața locului sau trebuie mutat într-un alt șantier.',
+      },
+      {
+        level: 'h2',
+        heading: 'Continuați să conduceți sau chemați evacuatorul?',
+        body: 'O mașină avariată care continuă să se deplaseze poate transforma o reparație minoră într-una majoră, iar evacuarea este, de obicei, opțiunea mai ieftină. Dacă aveți îndoieli cu privire la siguranța conducerii mașinii, sunați înainte de a porni din nou motorul.',
+      },
+      {
+        level: 'h3',
+        heading: 'Semne că mașina nu ar trebui condusă',
+        bullets: [
+          'Motorul se oprește sau pierde putere',
+          'Lampa de avertizare pentru presiunea uleiului sau temperatura rămâne aprinsă',
+          'Volanul trage puternic într-o parte sau pare slăbit',
+          'Frânele par moi sau scârțâie',
+          'Se scurge lichid sub motor',
+        ],
+      },
+      {
+        level: 'h3',
+        heading: 'Dacă nu sunteți sigur',
+        body: 'Sunați la +373 68 988 220 și descrieți ce vedeți și auziți. Dispecerul vă va spune ce echipament vine și vă va comunica prețul înainte ca evacuatorul să plece.',
+      },
+      {
+        level: 'h2',
+        heading: 'Ce vehicule transportăm',
+        body: 'Transportăm autoturisme, SUV-uri, microbuze, motociclete, ATV-uri și utilaje speciale de până la 15 tone. Aceasta include autoturismele cu roțile blocate și cele care au ajuns într-un șanț.',
+      },
+      {
+        level: 'h3',
+        heading: 'Motociclete și ATV-uri',
+        body: 'Comunicați dispecerului modelul și greutatea aproximativă, iar prețul vi se va comunica telefonic înainte ca evacuatorul să plece.',
+      },
+      {
+        level: 'h3',
+        heading: 'Utilaje speciale de până la 15 tone',
+        body: 'Tractoarele și încărcătoarele fac parte din categoria utilajelor grele, pentru care tariful începe de la 800 MDL plus 16 MDL pe km.',
+      },
+      {
+        level: 'h2',
+        heading: 'Evacuator în tot Chișinăul și în toată Moldova',
+      },
+      {
+        level: 'h3',
+        heading: 'Evacuator în fiecare sector al Chișinăului',
+        body: 'Mașinile noastre sunt distribuite în toate sectoarele capitalei: Botanica, Centru, Rîșcani, Buiucani și Ciocana. Astfel, timpul de așteptare este redus la minimum, iar un singur apel este suficient pentru a afla prețul și ora de sosire.',
+      },
+      {
+        level: 'h3',
+        heading: 'Evacuare interurbană în toată Moldova',
+        body: 'De asemenea, transportăm vehicule între orașe și localități de oriunde din Republica Moldova. Indicați adresa de preluare și destinația, iar dispecerul calculează costul în funcție de distanță.',
+      },
+      {
+        level: 'h2',
+        heading: 'De ce să apelați la un evacuator profesionist',
+        body: 'O pană sau o coliziune scoate mașina de pe șosea într-un moment nepotrivit, iar modul în care este încărcată influențează ceea ce urmează.',
+      },
+      {
+        level: 'h3',
+        heading: 'Echipamentul potrivit vă protejează mașina',
+        body: 'Folosim platforme moderne, troliuri și manipulatoare și alegem echipamentul potrivit pentru fiecare vehicul. O mașină obișnuită se urcă pe o platformă. O mașină care nu se poate deplasa are nevoie de un troliu sau de un manipulator. Astfel, încărcarea și descărcarea se desfășoară în condiții de siguranță pentru vehiculul dumneavoastră.',
+      },
+      {
+        level: 'h3',
+        heading: 'Răspuns rapid non-stop',
+        body: 'Serviciul funcționează 24 de ore pe zi, 7 zile pe săptămână, 365 de zile pe an, inclusiv în zilele de sărbătoare. Mașinile sunt repartizate în toate sectoarele orașului, astfel încât echipa cea mai apropiată să ajungă rapid la dumneavoastră.',
+      },
+      {
+        level: 'h2',
+        heading: 'Cum să vă pregătiți mașina pentru evacuare',
+      },
+      {
+        level: 'h3',
+        heading: 'Înainte de sosirea evacuatorului',
+        bullets: [
+          'Scoateți documentele, încărcătorul de telefon și obiectele de valoare din mașină',
+          'Fotografiați mașina din toate unghiurile, astfel încât starea acesteia înainte de încărcare să fie consemnată',
+          'Găsiți cheile și informați dispecerul dacă frâna de mână este trasă sau dacă volanul este blocat',
+        ],
+      },
+      {
+        level: 'h3',
+        heading: 'La sosirea evacuatorului',
+        body: 'Arătați șoferului unde se află mașina și unde trebuie dusă. Confirmați adresa de destinație înainte de încărcare și verificați dacă prețul corespunde celui comunicat de dispecer la telefon.',
+      },
+      {
+        level: 'h2',
+        heading: 'Plată și limbi de comunicare',
+      },
+      {
+        level: 'h3',
+        heading: 'Plată în numerar și fără numerar',
+        body: 'Puteți plăti în numerar sau prin mijloace de plată fără numerar. Suma este stabilită înainte de începerea serviciului, astfel încât suma comunicată la telefon este suma pe care o veți plăti.',
+      },
+      {
+        level: 'h3',
+        heading: 'Română și rusă',
+        body: 'Dispecerii preiau apelurile în română și rusă.',
+      },
+      {
+        level: 'h2',
+        heading: 'Comandați un evacuator în Chișinău',
+        body: 'Sunați dispecerul la +373 68 988 220 sau completați formularul cu numele dumneavoastră, adresa și marca mașinii. Spuneți-ne ce s-a întâmplat, iar noi vă vom comunica prețul și ora de sosire.',
+      },
+      {
+        level: 'h6',
+        heading: 'Evacuator Chișinău: +373 68 988 220, non-stop',
+      },
+    ],
   },
   footer: {
     rights: '© 2026 Vezu.md. Toate drepturile rezervate.\n' +

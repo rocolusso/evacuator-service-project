@@ -45,6 +45,13 @@ export interface BlogArticleData {
   faq: FaqItem[];
 }
 
+export interface SeoBlock {
+  level: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  heading?: string;
+  body?: string;
+  bullets?: string[];
+}
+
 export interface PolicySection {
   heading: string;
   body: string;
@@ -86,12 +93,7 @@ export interface Locale {
     items: FaqItem[];
   };
   seo: {
-    h2: string;
-    text1: string;
-    h3_1: string;
-    text2: string;
-    h3_2: string;
-    text3: string;
+    items: SeoBlock[];
   };
   footer: {
     rights: string;

@@ -58,8 +58,16 @@ export default function HeroSection({ t }: HeroSectionProps) {
 
         {/* H1 — critical for SEO, rendered server-side */}
         <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight'>
-          {hero.h1.split('24/7')[0]}
-          <span className='text-yellow-400'>24/7</span>
+          {(() => {
+            const parts = hero.h1.split('24/7');
+            return (
+              <>
+                {parts[0]}
+                <span className='text-yellow-400'>24/7</span>
+                {parts.slice(1).join('24/7')}
+              </>
+            );
+          })()}
         </h1>
 
         {/* Subtitle */}
